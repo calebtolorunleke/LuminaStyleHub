@@ -29,17 +29,18 @@ const AboutusComp = () => {
   const mission = [
     {
       missionText:
-        "To bridge the gap between the fashion forward poeple and the authentic Nigerian creatives.",
+        "To bridge the gap between the fashion forward people and the authentic Nigerian creatives.",
     },
     {
       missionText:
-        "To allow customers be able to personalize their fashion jiourney",
+        "To allow customers be able to personalize their fashion journey.",
     },
     {
       missionText:
-        "To pave way for global recognition of the Nigerian Designers",
+        "To pave way for global recognition of the Nigerian Designers.",
     },
   ];
+
   return (
     <div>
       <Header />
@@ -52,44 +53,52 @@ const AboutusComp = () => {
         />
         {mainHead.map((inmain, index) => (
           <h1
-            className="z-10 md:text-4xl md:font- text-white p-10 md:p-40"
             key={index}
+            className="z-10 text-center md:text-4xl text-white p-10 md:p-40 font-semibold"
           >
             {inmain.themain}
           </h1>
         ))}
       </div>
+
       <div className="flex flex-col items-center p-10">
-        <h1 className="p-5">Trending Now</h1>
+        <h1 className="p-5 text-2xl font-bold">Trending Now</h1>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
-          {trendingDiv.map((setTrend, index) => (
-            <div key={index}>
+          {trendingDiv.map((setTrend) => (
+            <div key={setTrend.trendName} className="text-center">
               <img
                 src={setTrend.trendIMG}
-                alt=""
-                className="h-[10rem] w-[10rem] md:h-[20rem] md:w-[20rem] rounded-xl onject-cover"
+                alt={setTrend.trendName}
+                className="h-[10rem] w-[10rem] md:h-[20rem] md:w-[20rem] rounded-xl object-cover"
               />
-              <h3>{setTrend.trendName}</h3>
+              <h3 className="mt-2 font-medium">{setTrend.trendName}</h3>
             </div>
           ))}
         </div>
-        <div className="flex flex-row items-end justify-end text-end w-full p-1">
-          <button className="p-1 border border-2 border-blue-400 rounded">
+
+        <div className="flex flex-row items-end justify-end text-end w-full p-4">
+          <button className="px-4 py-2 border border-blue-400 rounded text-blue-600 hover:bg-blue-100 transition duration-200">
             Continue to Shop
           </button>
         </div>
 
         <div className="py-7 flex flex-col items-center">
-          <h1 className="text-lg md:text-3xl">Mission Statement</h1>
-          <div className="grid grid-col md:grid-cols-3 gap-3 md:gap-9 mt-4">
-            {mission.map((inMission, index) => (
-              <div className="border border-blue-300 border-3 rounded-lg p-5">
-                <h1 key={index}>{inMission.missionText}</h1>
+          <h1 className="text-lg md:text-3xl font-bold mb-4">
+            Mission Statement
+          </h1>
+          <div className="grid md:grid-cols-3 gap-3 md:gap-9 mt-4">
+            {mission.map((inMission) => (
+              <div
+                key={inMission.missionText}
+                className="border border-blue-300 rounded-lg p-5 shadow-md bg-white"
+              >
+                <h1 className="text-center">{inMission.missionText}</h1>
               </div>
             ))}
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );
