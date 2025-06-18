@@ -91,7 +91,7 @@ const Shop = () => {
   return (
     <>
       <Header />
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center overflow-hidden">
         <h1 className="text-sm md:text-2xl font-bold">Shop Now</h1>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-5 p-5 md:p-10">
           {shopNow.map((mapShop, index) => (
@@ -108,7 +108,7 @@ const Shop = () => {
         <div className="flex flex-col items-center gap-4">
           <h1 className="text-sm md:text-2xl font-bold">Categories</h1>
 
-          <div className="flex flex-row gap-4 md:gap-10 py-2 px-3 md:px-10 animate-scroll w-max">
+          <div className="overflow-hidden flex flex-row gap-4 md:gap-10 py-2 px-3 md:px-10 animate-scroll w-max">
             {[...categoriesSet, ...categoriesSet, ...categoriesSet].map(
               (onCategories, index) => (
                 <div
