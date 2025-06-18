@@ -14,6 +14,10 @@ const Header = () => {
     navigate("/About");
   };
 
+  const goToShop = () => {
+    navigate("/Shop");
+  };
+
   return (
     <>
       <div className="px-4 py-2 md:px-20 md:py-5 flex flex-row justify-between items-center">
@@ -44,7 +48,10 @@ const Header = () => {
             >
               About Us
             </li>
-            <li className="hover:text-blue-600 transition-colors duration-300 cursor-pointer">
+            <li
+              className="hover:text-blue-600 transition-colors duration-300 cursor-pointer"
+              onClick={goToShop}
+            >
               Shop
             </li>
             <li className="hover:text-blue-600 transition-colors duration-300 cursor-pointer">
@@ -77,7 +84,10 @@ const Header = () => {
           >
             About Us
           </li>
-          <li className="hover:bg-green-400 px-3 py-2 rounded cursor-pointer transition-colors duration-200">
+          <li
+            className="hover:bg-green-400 px-3 py-2 rounded cursor-pointer transition-colors duration-200"
+            onClick={goToShop}
+          >
             Shop
           </li>
           <li className="hover:bg-green-400 px-3 py-2 rounded cursor-pointer transition-colors duration-200">

@@ -1,8 +1,14 @@
 import React from "react";
 import AboutusIMG from "../assets/aboutUs.jpg";
 import AboutusIMG2 from "../assets/aboutus2.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Aboutus = () => {
+  const navigate = useNavigate();
+
+  const goToShop = () => {
+    navigate("/Shop");
+  };
   return (
     <div className="mt-15 md:mt-0  flex flex-col items-center gap-2 md:gap-7">
       <h1 className="font-bold text-2xl">About Us</h1>
@@ -23,7 +29,10 @@ const Aboutus = () => {
         <img src={AboutusIMG2} alt="" className="px-20 pb-3" />
       </div>
       <div className="flex flex-row items-end justify-end text-end w-full p-3">
-        <button className="p-2 border border-2 border-blue-400 rounded">
+        <button
+          className="p-2 border border-2 border-blue-400 rounded"
+          onClick={goToShop}
+        >
           Continue to Shop
         </button>
       </div>

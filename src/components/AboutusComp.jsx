@@ -8,6 +8,7 @@ import trendIMG4 from "../assets/pic4.jpg";
 import trendIMG5 from "../assets/pic5.jpg";
 import trendIMG6 from "../assets/pic6.jpg";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 
 const AboutusComp = () => {
   const mainHead = [
@@ -41,11 +42,17 @@ const AboutusComp = () => {
     },
   ];
 
+  const navigate = useNavigate();
+
+  const goToShop = () => {
+    navigate("/Shop");
+  };
+
   return (
     <div>
       <Header />
 
-      <div className="flex flex-col relative items-center md:h-[570px]">
+      <div className="flex flex-col relative items-center h-[250px] md:h-[570px]">
         <img
           src={MainIMG}
           alt=""
@@ -77,7 +84,10 @@ const AboutusComp = () => {
         </div>
 
         <div className="flex flex-row items-end justify-end text-end w-full p-4">
-          <button className="px-4 py-2 border border-blue-400 rounded text-blue-600 hover:bg-blue-100 transition duration-200">
+          <button
+            className="px-4 py-2 border border-blue-400 rounded text-blue-600 hover:bg-blue-100 transition duration-200"
+            onClick={goToShop}
+          >
             Continue to Shop
           </button>
         </div>
